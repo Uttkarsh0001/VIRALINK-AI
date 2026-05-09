@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase";
 import { saveGeneration } from "@/lib/saveGeneration";
@@ -220,7 +220,7 @@ function buildPreview(tool: ToolType, responseData: ApiResponse, fallbackTopic: 
   return fallbackTopic;
 }
 
-export default function GeneratePage() {
+function GeneratePageContent() {
   const searchParams = useSearchParams();
   const supabase = useMemo(() => createClient(), []);
 
@@ -1056,6 +1056,22 @@ export default function GeneratePage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function GeneratePage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-[#050816] text-white flex items-center justify-center">
+          <div className="rounded-3xl border border-white/10 bg-white/[0.03] px-6 py-4 text-white/70">
+            Loading generator...
+          </div>
+        </div>
+      }
+    >
+      <GeneratePageContent />
+    </Suspense>
   );
 }
 
