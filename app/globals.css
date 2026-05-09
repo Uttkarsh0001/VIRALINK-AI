@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #020617;
+  color: white;
+}
+
+button,
+a,
+select,
+input[type="button"],
+input[type="submit"],
+[role="button"] {
+  cursor: pointer;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.35);
+  color: white;
+}
+
+select {
+  appearance: none;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 999px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  cursor: default;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  cursor: pointer;
+}
+
+input,
+textarea {
+  cursor: text;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  cursor: default;
+  overflow-x: hidden;
+  background: #050816;
+  color: white;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  cursor: pointer;
+}
+
+input,
+textarea {
+  cursor: text;
+}
+
+/* smoother visuals */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* cleaner scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a1020;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
